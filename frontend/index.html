@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker News Article Check</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+            transition: background-color 0.3s ease;
+        }
+        li:hover {
+            background-color: #f0f0f5;
+        }
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+        .article-title {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .article-info {
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hacker News Article Sorting Verification</h1>
+    </header>
+    
+    <main>
+        <ul id="article-list"></ul>
+    </main>
+
+    <footer>
+        &copy; 2024 Hacker News Scraper by Andre Silva
+    </footer>
+
+    <script>
+        // Fetch articles from the server
+        fetch('http://localhost:3000/articles')
+            .then(response => response.json())
+            .then(data => {
+                const articleList = document.getElementById('article-list');
+                let sorted = true;
+                
+                // Loop through articles and append them to the page
+                data.forEach((article, index) => {
+                    const listItem = document.createElement('li');
+                    
+                    listItem.innerHTML = `
+                        <span class="article-title">${article.title}</span>
+                        <span class="article-info">Upvotes: ${article.upvotes} | Comments: ${article.comments} | Posted: ${article.time}</span><br>
+                        <a href="${article.link}" target="_blank">Read more</a>
+                    `;
+                    
+                    // Optionally check if articles are sorted correctly (newest first)
+                    if (index > 0 && new Date(article.time) > new Date(data[index - 1].time)) {
+                        listItem.className = 'fail'; // If not sorted
+                        listItem.innerHTML += ' <span>(Not Sorted Correctly)</span>';
+                        sorted = false;
+                    } else {
+                        listItem.className = 'pass'; // If sorted
+                        listItem.innerHTML += '';
+                    }
+                    
+                    articleList.appendChild(listItem);
+                });
+                
+                // Log overall result to the console
+                if (sorted) {
+                    console.log('All articles are sorted correctly.');
+                } else {
+                    console.log('Some articles are not sorted correctly.');
+                }
+            });
+    </script>
+</body>
+</html>

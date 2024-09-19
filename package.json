@@ -1,0 +1,26 @@
+{
+  "name": "qa_wolf_take_home",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "start": "node frontend/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.47.1",
+    "@types/node": "^20.8.9",
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0-rc.10",
+    "json2csv": "^5.0.0",
+    "playwright": "^1.39.0"
+  },
+  "dependencies": {
+    "csv": "^6.3.10",
+    "csv-parser": "^3.0.0",
+    "express": "^4.19.2",
+    "open": "^10.1.0"
+  }
+}
