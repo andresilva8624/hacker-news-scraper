@@ -96,8 +96,8 @@
                     const listItem = document.createElement('li');
                     
                     listItem.innerHTML = `
-                        <span class="article-title">${article.title}</span>
-                        <span class="article-info">Upvotes: ${article.upvotes} | Comments: ${article.comments} | Posted: ${article.time}</span><br>
+                        <span class="article-title">${article.index} - ${article.title}</span>
+                        <span class="article-info">Upvotes: ${article.upvotes} | Comments: ${article.comments} | Posted: ${article.time} | ArticleId: ${article.articleId}</span><br>
                         <a href="${article.link}" target="_blank">Read more</a>
                     `;
                     

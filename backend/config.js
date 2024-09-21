@@ -7,4 +7,4 @@ class Config {
 const global_config = new Config("https://news.ycombinator.com/newest", 100);
 console.log('Global Config:', global_config); 
 
-
+module.exports = global_config.num_articles; // Exporting the config

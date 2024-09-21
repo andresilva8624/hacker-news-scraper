@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 app.get('/articles', (_req, res) => {
     const articles = [];
     // Reading the CSV file
-    fs.createReadStream(path.join(__dirname, '../articles.csv'))
+    fs.createReadStream(path.join(__dirname, '../scraper/articles.csv'))
         .pipe(csv()) // Parses CSV
         .on('data', (row) => {
             articles.push(row); // Adds each row (article) to the articles array
