@@ -1,5 +1,4 @@
-# QA Wolf Take-Home Assignment
-
+# QA Wolf
 ## Overview
 This project is a web scraper for Hacker News articles, built using Node.js and Playwright. It retrieves articles and organizes them based on when they were posted. The frontend component allows for easy viewing of the results, and the backend handles scraping including all the info.
 
