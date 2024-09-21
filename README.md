@@ -4,9 +4,9 @@
 This project is a web scraper for Hacker News articles, built using Node.js and React. It retrieves articles and organizes them based on when they were posted. The frontend component allows for easy viewing of the results, and the backend handles scraping and validation.
 
 ### Technologies Used:
-- **Playwright** for scraping
-- **React** for the frontend
-- **Node.js** for the backend
+- **Playwright**, **Cheerio** for scraping
+- **Express**, **Open** for the frontend
+- **Node.js**, **Axios**, **Csv*** for the backend
 
 ## Setup Instructions
 
