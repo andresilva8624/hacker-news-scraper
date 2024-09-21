@@ -16,8 +16,8 @@ This project is a web scraper for Hacker News articles, built using Node.js and 
 ### Installation:
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/qa-wolf-scraper.git
-    cd qa-wolf-scraper
+    git clone https://github.com/andresilva8624/qa-wolf.git
+    cd qa-wolf
     ```
 
 2. Install the dependencies:
