@@ -1,12 +1,12 @@
 # QA Wolf Take-Home Assignment
 
 ## Overview
-This project is a web scraper for Hacker News articles, built using Node.js and React. It retrieves articles and organizes them based on when they were posted. The frontend component allows for easy viewing of the results, and the backend handles scraping and validation.
+This project is a web scraper for Hacker News articles, built using Node.js and Playwright. It retrieves articles and organizes them based on when they were posted. The frontend component allows for easy viewing of the results, and the backend handles scraping including all the info.
 
 ### Technologies Used:
 - **Playwright**, **Cheerio** for scraping
 - **Express**, **Open** for the frontend
-- **Node.js**, **Axios**, **Csv*** for the backend
+- **Node.js**, **Axios**, **Csv** for the backend
 
 ## Setup Instructions
 
