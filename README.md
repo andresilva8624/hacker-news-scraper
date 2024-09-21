@@ -43,4 +43,4 @@ This project is a web scraper for Hacker News articles, built using Node.js and 
 
 ## Usage
 - The backend will scrape 100 posts from Hacker News including title, author, upvotes, comments, rank, articleId .
-- The frontend displays the a list of the posts
+- The frontend displays a list of the first 100 posts from newest to oldest .
