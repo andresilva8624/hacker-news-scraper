@@ -21,7 +21,7 @@ function get_articles(html, startIndex) {
 
   $('.athing').each((i, el) => {
     const title = $(el).find('.titleline a').text().trim();
-    const author = $(el).next().find('.subline a').first().text().trim();  // Extract author
+    const user = $(el).next().find('.subline a').first().text().trim();  // Extract author
     const link = $(el).find('.titleline a').attr('href');
     const articleId = $(el).attr('id');
     const commentText = $(el).next().find('.subline a').last().text().trim();  // Extract comments link
@@ -34,7 +34,7 @@ function get_articles(html, startIndex) {
 
     articles.push({ 
       index: startIndex + i,
-      title, link, comments, upvotes, time, author, articleId });
+      title, link, comments, upvotes, time, user, articleId });
   });
 
   console.log("Articles found:", articles.length);

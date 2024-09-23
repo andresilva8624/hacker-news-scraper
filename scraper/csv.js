@@ -16,7 +16,7 @@ function write_articles_to_csv(filename, articles) {
         }
 
         // Specify fields if needed
-        const fields = ['index','rank', 'title', 'link', 'comments', 'upvotes', 'time', 'author', 'articleId'];
+        const fields = ['index','rank', 'title', 'link', 'comments', 'upvotes', 'time', 'user', 'articleId'];
         const opts = { fields };
 
         // Parse data to CSV format
